@@ -1,12 +1,11 @@
 from abc import ABCMeta, abstractmethod
-from datetime import date, timedelta
 
 class IPeriod(metaclass=ABCMeta):
     def __init__(self, num):
-        if isinstance(num, int):
+        if isinstance(num, int) and (num >= 0):
             self._num = num
         else:
-            raise ValueError("num must be an integer")
+             raise ValueError("num must be a integer")
 
     def __add__(self, elem):
         return self._advance(1, elem)
@@ -21,4 +20,7 @@ class IPeriod(metaclass=ABCMeta):
     @abstractmethod
     def _advance(self, flag, elem):
         pass
+
+
+
 

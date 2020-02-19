@@ -15,3 +15,7 @@ def end_of_month(yyyy, mm):
         return dd
         
 
+def main():
+    print("OK")
+
+main()
