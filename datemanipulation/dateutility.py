@@ -13,9 +13,4 @@ def end_of_month(yyyy, mm):
             dd = 29 if is_leap_year(yyyy) else 28
 
         return dd
-        
-
-def main():
-    print("OK")
-
-main()
+    
