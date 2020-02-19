@@ -6,7 +6,7 @@ from datemanipulation.iperiod import IPeriod
 
 class Weeks(IPeriod):
     def to_string(self):
-        return "{} days".format(self._num)
+        return "{} months".format(self._num)
 
     def _advance(self, flag, elem):
         yyyy = elem.year

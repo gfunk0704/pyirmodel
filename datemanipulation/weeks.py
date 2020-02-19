@@ -5,7 +5,7 @@ from datemanipulation.iperiod import IPeriod
 
 class Weeks(IPeriod):
     def to_string(self):
-        return "{} days".format(self._num)
+        return "{} weeks".format(self._num)
 
     def _advance(self, flag, elem):
         return elem + timedelta(weeks = flag * self._num)
