@@ -4,7 +4,7 @@ from pythonlangutil.overload import Overload, signature
 from datemanipulation.iperiod import IPeriod
 
 class Weeks(IPeriod):
-    def to_string(self):
+    def __str__(self):
         return "{} weeks".format(self._num)
 
     def _advance(self, flag, elem):

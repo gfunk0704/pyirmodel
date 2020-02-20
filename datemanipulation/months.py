@@ -4,8 +4,8 @@ from pythonlangutil.overload import Overload, signature
 from datemanipulation.dateutility import end_of_month
 from datemanipulation.iperiod import IPeriod
 
-class Weeks(IPeriod):
-    def to_string(self):
+class Months(IPeriod):
+    def __str__(self):
         return "{} months".format(self._num)
 
     def _advance(self, flag, elem):

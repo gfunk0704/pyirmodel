@@ -4,8 +4,8 @@ from pythonlangutil.overload import Overload, signature
 from datemanipulation.dateutility import is_leap_year
 from datemanipulation.iperiod import IPeriod
 
-class Weeks(IPeriod):
-    def to_string(self):
+class Years(IPeriod):
+    def __str__(self):
         return "{} years".format(self._num)
 
     def _advance(self, flag, elem):
