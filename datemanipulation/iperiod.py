@@ -19,4 +19,9 @@ class IPeriod(metaclass=ABCMeta):
 
 
 
+def main():
+    a = 1
+    b = "a"
+    print(str(a) + b)
 
+main()

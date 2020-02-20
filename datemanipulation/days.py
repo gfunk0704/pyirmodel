@@ -9,3 +9,4 @@ class Days(IPeriod):
 
     def _advance(self, flag, elem):
         return elem + timedelta(days = flag * self._num)
+

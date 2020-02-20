@@ -14,8 +14,11 @@ class DayConvention:
         self.__calendar = calendar
         self.__value_date = value_date
 
-    def convert_tenor_to_date(self, tenor):
-        expiry_date = self.__value_date.clone()
+    def convert_tenor_to_date(self, tenor, start_date = None):
+        if start_date is None:
+            start_date = self.__value_date
+
+        expiry_date = start_date
         if tenor in ["ON", "TN"]:
             n_day = 1 if tenor == "ON" else 2
             while (n_day > 0):
@@ -34,7 +37,7 @@ class DayConvention:
 
                 while self.is_holiday(expiry_date):
                     expiry_date = op(expiry_date, Days(1))
-                    
+
         return expiry_date
 
     def is_businessday(self, date):
@@ -42,3 +45,19 @@ class DayConvention:
 
     def is_holiday(self, date):
         return self.__calendar.is_holiday(date)
+
+    def date_sequence(self, end, by, begin = None):
+        if begin is None:
+            begin = self.__value_date
+        next_date = begin
+        seq = []
+        num = int(by[:len(by)])
+        add_num = num
+        base = by[len(by)]
+
+        while (next_date <= end):
+            seq.append(next_date)
+            next_date = self.convert_tenor_to_date(str(num) + base, begin)
+            num += add_num
+
+        return seq
