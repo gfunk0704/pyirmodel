@@ -1,7 +1,4 @@
-from datetime import date, timedelta
-from pythonlangutil.overload import Overload, signature
-
-from datemanipulation.iperiod import IPeriod
+from schedule.iperiod import IPeriod, timedelta
 
 class Weeks(IPeriod):
     def __str__(self):

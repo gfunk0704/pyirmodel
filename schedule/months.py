@@ -1,8 +1,5 @@
-from datetime import date
-from pythonlangutil.overload import Overload, signature
-
-from datemanipulation.dateutility import end_of_month
-from datemanipulation.iperiod import IPeriod
+from schedule.dateutility import end_of_month
+from schedule.iperiod import IPeriod, date
 
 class Months(IPeriod):
     def __str__(self):

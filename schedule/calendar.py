@@ -1,5 +1,5 @@
-from datemanipulation.dateutility import end_of_month
-from datemanipulation.days import Days
+from schedule.dateutility import end_of_month
+from schedule.days import Days
 
 
 def is_regular_weekend(elem):

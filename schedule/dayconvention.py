@@ -1,10 +1,10 @@
 from operator import add, sub
 
-from datemanipulation.calendar import Calnedar
-from datemanipulation.days import Days
-from datemanipulation.weeks import Weeks
-from datemanipulation.months import Months
-from datemanipulation.years import Years
+from schedule.calendar import Calnedar
+from schedule.days import Days
+from schedule.weeks import Weeks
+from schedule.months import Months
+from schedule.years import Years
 
 
 class DayConvention:

@@ -1,5 +1,5 @@
 
-from datemanipulation.calendar import Calnedar
+from schedule.calendar import Calnedar
 
 
 def _is_united_states_holiday(elem):

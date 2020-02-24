@@ -1,4 +1,5 @@
 from abc import ABCMeta, abstractmethod
+from datetime import date, timedelta
 
 class IPeriod(metaclass=ABCMeta):
     def __init__(self, num):
@@ -10,18 +11,17 @@ class IPeriod(metaclass=ABCMeta):
     def __add__(self, elem):
         return self._advance(1, elem)
 
+    def __radd__(self, elem):
+        return (self + elem)
+
     def __sub__(self, elem):
         return self._advance(-1, elem)
+
+    def __rsub__(self, elem):
+        return (self - elem)
 
     @abstractmethod
     def _advance(self, flag, elem):
         pass
 
 
-
-def main():
-    a = 1
-    b = "a"
-    print(str(a) + b)
-
-main()
