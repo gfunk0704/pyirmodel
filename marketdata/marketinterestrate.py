@@ -6,3 +6,5 @@ class MarketInterestRate:
         self.__day_count = day_count
         self.__period = period
     
+    def to_cashflow(self, day_convention, pricing_day_count):
+        
